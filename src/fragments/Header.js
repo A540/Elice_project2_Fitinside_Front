@@ -18,7 +18,7 @@ const Header = () => {
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/api/categories', {
+                const response = await axios.get('http://3.95.202.193/api/categories', {
                     headers: {
                         'Authorization': `Bearer ${localStorage.getItem('token')}`
                     },

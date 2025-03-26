@@ -60,7 +60,7 @@ const Signup = () => {
         }
 
         try {
-            const response = await axios.post('http://localhost:8080/api/auth', {
+            const response = await axios.post('http://3.95.202.193/api/auth', {
                 email,
                 password,
                 userName,
