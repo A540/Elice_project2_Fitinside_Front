@@ -60,7 +60,7 @@ const Signup = () => {
         }
 
         try {
-            const response = await axios.post('http://fitinside.duckdns.org:8080/api/auth', {
+            const response = await axios.post('https://fitinside.duckdns.org/api/auth', {
                 email,
                 password,
                 userName,

@@ -14,7 +14,7 @@ const ProductSection = () => {
     useEffect(() => {
         const fetchProduct = async () => {
             try {
-                const response = await axios.get(`http://fitinside.duckdns.org:8080/api/products/${productId}`);
+                const response = await axios.get(`https://fitinside.duckdns.org/api/products/${productId}`);
                 setProduct(response.data);
                 setSelectedImage(response.data.productImgUrls ? response.data.productImgUrls[0] : dummyImage);
             } catch (error) {

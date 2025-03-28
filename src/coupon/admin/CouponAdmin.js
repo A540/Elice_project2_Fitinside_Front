@@ -24,7 +24,7 @@ const CouponAdmin = () => {
 
     const fetchCoupons = async (page, includeInActiveCoupons) => {
         try {
-            const response = await axios.get(`http://fitinside.duckdns.org:8080/api/admin/coupons`, {
+            const response = await axios.get(`https://fitinside.duckdns.org/api/admin/coupons`, {
                 params: {
                     page: page,
                     includeInActiveCoupons: includeInActiveCoupons
@@ -41,7 +41,7 @@ const CouponAdmin = () => {
                 await sendRefreshTokenAndStoreAccessToken();
 
                 // 토큰 갱신 후 다시 요청
-                const newResponse = await axios.get(`http://fitinside.duckdns.org:8080/api/admin/coupons`, {
+                const newResponse = await axios.get(`https://fitinside.duckdns.org/api/admin/coupons`, {
                     params: {
                         page: page,
                         includeInActiveCoupons: includeInActiveCoupons
@@ -61,7 +61,7 @@ const CouponAdmin = () => {
 
     const fetchCategories = async () => {
         try {
-            const response = await axios.get('http://fitinside.duckdns.org:8080/api/categories', {
+            const response = await axios.get('https://fitinside.duckdns.org/api/categories', {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`
                 },
@@ -73,7 +73,7 @@ const CouponAdmin = () => {
                 await sendRefreshTokenAndStoreAccessToken();
 
                 // 토큰 갱신 후 다시 요청
-                const newResponse = await axios.get('http://fitinside.duckdns.org:8080/api/categories', {
+                const newResponse = await axios.get('https://fitinside.duckdns.org/api/categories', {
                     headers: {
                         'Authorization': `Bearer ${localStorage.getItem('token')}` // 갱신된 토큰 사용
                     },
@@ -106,7 +106,7 @@ const CouponAdmin = () => {
 
     const deactivateCoupon = async (id) => {
         try {
-            const response = await axios.delete(`http://fitinside.duckdns.org:8080/api/admin/coupons/${id}`, {
+            const response = await axios.delete(`https://fitinside.duckdns.org/api/admin/coupons/${id}`, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -124,7 +124,7 @@ const CouponAdmin = () => {
                     await sendRefreshTokenAndStoreAccessToken();
 
                     // 토큰 갱신 후 다시 요청
-                    const response = await axios.delete(`http://fitinside.duckdns.org:8080/api/admin/coupons/${id}`, {
+                    const response = await axios.delete(`https://fitinside.duckdns.org/api/admin/coupons/${id}`, {
                         headers: {
                             'Content-Type': 'application/json',
                             'Authorization': `Bearer ${localStorage.getItem('token')}` // 갱신된 토큰 사용

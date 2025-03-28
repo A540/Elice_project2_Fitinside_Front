@@ -10,7 +10,7 @@ const AddressModal = ({ isOpen, onClose, onSelect, onEdit, selectedAddressId }) 
         const fetchAddresses = async () => {
             try {
                 if (isOpen) {
-                    const response = await axios.get('http://fitinside.duckdns.org:8080/api/addresses', {
+                    const response = await axios.get('https://fitinside.duckdns.org/api/addresses', {
                         headers: {
                             'Authorization': `Bearer ${localStorage.getItem('token')}`
                         }
@@ -23,7 +23,7 @@ const AddressModal = ({ isOpen, onClose, onSelect, onEdit, selectedAddressId }) 
                     await sendRefreshTokenAndStoreAccessToken();
 
                     if (isOpen) {
-                        const response = await axios.get('http://fitinside.duckdns.org:8080/api/addresses', {
+                        const response = await axios.get('https://fitinside.duckdns.org/api/addresses', {
                             headers: {
                                 'Authorization': `Bearer ${localStorage.getItem('token')}`
                             }
