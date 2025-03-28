@@ -33,7 +33,7 @@ const ProductAdmin = () => {
         try {
             const token = localStorage.getItem('token');
 
-            const response = await axios.get(`http://3.95.202.193:8080${endpoint}`, {
+            const response = await axios.get(`http://fitinside.duckdns.org:8080${endpoint}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`,  // Authorization 헤더 추가
                 },
@@ -63,7 +63,7 @@ const ProductAdmin = () => {
                     await sendRefreshTokenAndStoreAccessToken();
 
                     // 토큰 갱신 후 다시 요청
-                    const newResponse = await axios.get(`http://3.95.202.193:8080${endpoint}`, {
+                    const newResponse = await axios.get(`http://fitinside.duckdns.org:8080${endpoint}`, {
                         headers: {
                             'Authorization': `Bearer ${localStorage.getItem('token')}`,  // 새로 발급된 토큰 사용
                         },
@@ -125,7 +125,7 @@ const ProductAdmin = () => {
 
         try {
             const token = localStorage.getItem('token');  // 로컬 스토리지에서 토큰 가져오기
-            const response = await axios.delete(`http://3.95.202.193:8080/api/admin/products/${productId}`, {
+            const response = await axios.delete(`http://fitinside.duckdns.org:8080/api/admin/products/${productId}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`,  // Authorization 헤더 추가
                 },
@@ -145,7 +145,7 @@ const ProductAdmin = () => {
                     await sendRefreshTokenAndStoreAccessToken();
 
                     // 토큰 갱신 후 다시 삭제 요청
-                    const newResponse = await axios.delete(`http://3.95.202.193:8080/api/admin/products/${productId}`, {
+                    const newResponse = await axios.delete(`http://fitinside.duckdns.org:8080/api/admin/products/${productId}`, {
                         headers: {
                             'Authorization': `Bearer ${localStorage.getItem('token')}`,  // 새로 발급된 토큰 사용
                         },

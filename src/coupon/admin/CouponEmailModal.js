@@ -22,7 +22,7 @@ const CouponEmailModal = ({ isOpen, onRequestClose, coupon }) => {
         setLoading(true);
         setError(null);
         try {
-            const response = await axios.get(`http://3.95.202.193:8080/api/admin/coupons/${id}/members`, {
+            const response = await axios.get(`http://fitinside.duckdns.org:8080/api/admin/coupons/${id}/members`, {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`
                 },
@@ -34,7 +34,7 @@ const CouponEmailModal = ({ isOpen, onRequestClose, coupon }) => {
                 await sendRefreshTokenAndStoreAccessToken();
 
                 // 토큰 갱신 후 다시 요청
-                const response = await axios.get(`http://3.95.202.193:8080/api/admin/coupons/${id}/members`, {
+                const response = await axios.get(`http://fitinside.duckdns.org:8080/api/admin/coupons/${id}/members`, {
                     headers: {
                         'Authorization': `Bearer ${localStorage.getItem('token')}` // 갱신된 토큰 사용
                     },
@@ -68,7 +68,7 @@ const CouponEmailModal = ({ isOpen, onRequestClose, coupon }) => {
                 const emailTemplate = CouponEmailTemplate({ coupon: coupon }); // 이메일 템플릿 HTML 가져오기
 
                 // 실제 이메일 전송 요청
-                const response = await axios.post('http://3.95.202.193:8080/api/admin/coupons/email', {
+                const response = await axios.post('http://fitinside.duckdns.org:8080/api/admin/coupons/email', {
                     couponId: coupon.id,
                     address: email,
                     template: emailTemplate // 결합된 템플릿 사용

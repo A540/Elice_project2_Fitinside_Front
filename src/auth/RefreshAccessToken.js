@@ -6,7 +6,7 @@ const sendRefreshTokenAndStoreAccessToken = async () => {
     try {
         // refreshToken을 /api/auth/token으로 JSON 형식으로 전송
         const response = await axios.post(
-            'http://3.95.202.193:8080/api/auth/token',
+            'http://fitinside.duckdns.org:8080/api/auth/token',
             { }, // refreshToken을 요청 바디에 포함
             {
                 headers: {

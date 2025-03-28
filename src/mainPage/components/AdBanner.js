@@ -11,7 +11,7 @@ const AdBanner = ({ userRole }) => {
 
     // 광고를 서버에서 가져오기
     useEffect(() => {
-        axios.get('http://3.95.202.193:8080/api/banners', {
+        axios.get('http://fitinside.duckdns.org:8080/api/banners', {
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}` // Bearer 토큰 포함
             }
